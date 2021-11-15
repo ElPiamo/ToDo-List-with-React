@@ -1,13 +1,66 @@
 @import "~bootstrap/scss/bootstrap.scss";
+html, body {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background-color: black;
+    box-sizing: border-box;
+    display: flex;
+    font-family: 'Handlee', cursive;
+}
+body{
+    width: 900px;
+    align-items: center;
+    background-color: white;
+}
 
-/* 
+h1.mainTitle{
+    font-size: 100px;
+    color: rgb(165, 163, 163);
+    width: 900px;
+    align-self: center;
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+}
+input.inputData{
+    border: none;
+    font-size: 30px;
+    width: 760px;
+    text-align: left;
+    margin-left: 40px;
+}
+div.eachElement{
+    width: auto;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 50px;
+    text-align: left;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    justify-content: space-between;
+ 
 
-*/
+
+}
+div.tasksLeftText{
+    width: auto;
+    border-top: rgb(131, 130, 130) 1px solid;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 8px;
+   
+}
+i.taskNoHovering , .eachElement {
+    border-bottom: rgb(131, 130, 130) 1px solid;
+}
+i.fas.fa-times{
+    color: rgb(119, 15, 15);
+}
+
+div.theformat{
+    border: rgb(219, 23, 23) 1px solid;
+    width: 900px;
+}
+
+ul.tasksLists{
+    padding: 0%;
+}
+
