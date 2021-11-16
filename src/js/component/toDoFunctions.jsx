@@ -18,12 +18,12 @@ const AllToDos = () => {
 		setTodo(todo => todo.filter((tarea, i) => i !== idtodelete));
 	};
 	const [isHovering, setIsHovering] = useState(-1);
-	// const [xOver, setXOver] = useState(false);
-	// const glowUp = () => {
-	// 	if (xOver == true) {
-	// 		return { boxShadow: "0px 0px 20px 10px #babff5" };
-	// 	}
-	// };
+	const [xOver, setXOver] = useState(false);
+	const glowUp = () => {
+		if (xOver == true) {
+			return { boxShadow: "0px 0px 20px 10px #babff5" };
+		}
+	};
 	return (
 		<div className="text-center">
 			<h1 className="mainTitle">{`To Do's`}</h1>
@@ -49,30 +49,26 @@ const AllToDos = () => {
 								onMouseLeave={() => setIsHovering(-1)}>
 								{" "}
 								{tarea}
-								<i
-									COmo
-									hago
-									que
-									el
-									estilo
-									de
-									glow
-									soo
-									sea
-									par
-									una
-									X
-									// onMouseEnter={() => setXOver(true)}
-									// onMouseLeave={() => setXOver(false)}
-									// style={glowUp()}
+								<div
 									onClick={() => {
 										handleDeleteTask(i);
 									}}
 									className={
 										isHovering === i
-											? "fas fa-times"
+											? "text-danger"
 											: "taskNoHovering"
-									}></i>
+									}>
+									X
+								</div>
+								{/* <i									
+									onClick={() => {
+										handleDeleteTask(i);
+									}}
+									className={
+										isHovering === i
+											? "fas fa-window-close"
+											: "taskNoHovering"
+									}></i> */}
 							</div>
 						);
 					})}
