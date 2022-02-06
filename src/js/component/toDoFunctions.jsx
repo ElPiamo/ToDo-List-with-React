@@ -30,15 +30,27 @@ const AllToDos = () => {
 			<div className="theFormat">
 				<ul className="tasksLists">
 					<form onSubmit={e => e.preventDefault()}>
-						<input
-							className="inputData"
-							type="text"
-							placeholder="Type here what needs to be done"
-							value={input}
-							name="text"
-							onChange={e => setInput(e.target.value)}
-							onKeyDown={handleKeyDown}
-						/>
+						{todo.length == 0 ? (
+							<input
+								className="inputData"
+								type="text"
+								placeholder="No tasks, add a task"
+								value={input}
+								name="text"
+								onChange={e => setInput(e.target.value)}
+								onKeyDown={handleKeyDown}
+							/>
+						) : (
+							<input
+								className="inputData"
+								type="text"
+								placeholder="Type the tasks that need to be done"
+								value={input}
+								name="text"
+								onChange={e => setInput(e.target.value)}
+								onKeyDown={handleKeyDown}
+							/>
+						)}
 					</form>
 					{todo.map((tarea, i) => {
 						return (
@@ -56,19 +68,10 @@ const AllToDos = () => {
 									className={
 										isHovering === i
 											? "text-danger"
-											: "taskNoHovering"
+											: "taskNoHovering text-light"
 									}>
-									X
+									<i className="fas fa-trash-alt "></i>
 								</div>
-								{/* <i									
-									onClick={() => {
-										handleDeleteTask(i);
-									}}
-									className={
-										isHovering === i
-											? "fas fa-window-close"
-											: "taskNoHovering"
-									}></i> */}
 							</div>
 						);
 					})}
